@@ -52,19 +52,13 @@ struct PushNotification: Notificavel {
     }
 }
 
-// Criação de instâncias da struct `Mensagem`
-let mensagemPromocao = Mensagem(tipo: .promocao, conteudo: "Desconto de 50% hoje no Samsung S24 Ultra, corra!")
-let mensagemLembrete = Mensagem(tipo: .lembrete, conteudo: "Sua fatura do cartão de crédito vence amanhã")
-let mensagemAlerta = Mensagem(tipo: .alerta, conteudo: "Seu token chegou")
+import SwiftUI
 
-// Criação de uma array que armazena objetos que conformam ao protocolo `Notificavel`
-let canais: [Notificavel] = [
-    Email(mensagem: mensagemPromocao, enderecoEmail: "josecarlos@gmail.com"),
-    SMS(mensagem: mensagemLembrete, numeroTelefone: "41987091400"),
-    PushNotification(mensagem: mensagemAlerta, tokenDispositivo: "GB07MN")
-]
-
-// Enviar todas as notificações
-for canal in canais {
-    canal.enviarNotificacao()
+@main
+struct NotificationApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
 }
