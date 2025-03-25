@@ -53,3 +53,13 @@ struct PushNotification: Notificavel {
     }
 }
 
+// Exemplo de uso
+let mensagemPromocao = Mensagem(tipo: .promocao, conteudo: "50% de desconto!")
+
+let email = Email(mensagem: mensagemPromocao, enderecoEmail: "usuario@exemplo.com")
+let sms = SMS(mensagem: mensagemPromocao, numeroTelefone: "123456789")
+let push = PushNotification(mensagem: mensagemPromocao, tokenDispositivo: "token123")
+
+email.enviarNotificacao()
+sms.enviarNotificacao()
+push.enviarNotificacao()
