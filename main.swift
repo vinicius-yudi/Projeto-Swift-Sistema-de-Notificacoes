@@ -1,3 +1,4 @@
+
 // Protocolo Notificavel definindo uma estrutura padrão para os canais de notificação
 protocol Notificavel {
     var mensagem: Mensagem { get set }
@@ -52,13 +53,3 @@ struct PushNotification: Notificavel {
     }
 }
 
-import SwiftUI
-
-@main
-struct NotificationApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
