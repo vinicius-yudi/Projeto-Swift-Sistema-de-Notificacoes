@@ -107,20 +107,20 @@ func main() {
     let canaisNotificacao: [Notificavel] = [email1, email2, sms1, push1, push2]
 
     // Enviando notificações para todos os canais
-    print("\n=== Enviando notificações para todos os canais ===")
+    print("\n====== Enviando notificações para todos os canais ====== \n")
     for canal in canaisNotificacao {
         canal.enviarNotificacao()
     }
 
     // Filtrando apenas emails (Desafio Adicional)
     let emails = filtrarCanais(canaisNotificacao, tipo: Email.self)
-    print("\n=== Filtrando apenas emails ===")
+    print("\n====== Filtrando apenas emails ====== \n")
     for email in emails {
         email.enviarNotificacao()
     }
 
     // Criando uma nova mensagem e atribuindo a um canal
-    print("\n=== Criando e enviando nova mensagem ===")
+    print("\n====== Criando e enviando nova mensagem ====== \n")
     let novaMensagem = Mensagem(tipo: .lembrete, conteudo: "Novo lembrete: Débito Automático da sua fatura será amanhã")
     let novoEmail = Email(mensagem: novaMensagem, prioridade: .media, enderecoEmail: "victor@gmail.com")
     novoEmail.enviarNotificacao()
