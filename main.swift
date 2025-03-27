@@ -91,7 +91,6 @@ func filtrarCanais<T: Notificavel>(_ canais: [Notificavel], tipo: T.Type) -> [T]
 func main() {
     // Criando algumas mensagens
     let mensagemPromocao = Mensagem(tipo: .promocao, conteudo: "Oferta especial do Samsung S24 Ultra apenas hoje!")
-    let mensagemPromocao2 = Mensagem(tipo: .promocao, conteudo: "Oferta especial de Televisão Samsung UHD 4K de 60 polegadas apenas hoje!")
     let mensagemLembrete = Mensagem(tipo: .lembrete, conteudo: "Não se esqueça da reunião às 15h")
     let mensagemAlerta = Mensagem(tipo: .alerta, conteudo: "Sua assinatura expira em 3 dias")
     let mensagemAlerta2 = Mensagem(tipo: .alerta, conteudo: "Sua conta foi bloqueada por excesso de tentativas de login")
@@ -105,7 +104,7 @@ func main() {
     let push2 = PushNotification(mensagem: mensagemAlerta3, prioridade: .media, tokenDispositivo: "Motorola123")
 
     // Criando array de notificáveis
-    var canaisNotificacao: [Notificavel] = [email1, email2, sms1, push1, push2]
+    let canaisNotificacao: [Notificavel] = [email1, email2, sms1, push1, push2]
 
     // Enviando notificações para todos os canais
     print("\n=== Enviando notificações para todos os canais ===")
@@ -123,7 +122,7 @@ func main() {
     // Criando uma nova mensagem e atribuindo a um canal
     print("\n=== Criando e enviando nova mensagem ===")
     let novaMensagem = Mensagem(tipo: .lembrete, conteudo: "Novo lembrete: Débito Automático da sua fatura será amanhã")
-    var novoEmail = Email(mensagem: novaMensagem, prioridade: .media, enderecoEmail: "victor@gmail.com")
+    let novoEmail = Email(mensagem: novaMensagem, prioridade: .media, enderecoEmail: "victor@gmail.com")
     novoEmail.enviarNotificacao()
 }
 
