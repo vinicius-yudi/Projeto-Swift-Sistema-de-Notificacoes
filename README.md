@@ -1,15 +1,18 @@
-Projeto Swift Essencial: Sistema de Notificações (Console com POP)
+# Projeto Swift Essencial: Sistema de Notificações (Console com POP)
 
-Detalhes:
-Equipe de até 5 pessoas
-Vale: 10% da média final
-Data de entrega: 30/03/2025
-Pode ser feito com compilador online (como o https://replit.com/) ou xcode
-
-Objetivo:
+## Objetivo:
 Desenvolver um sistema de notificações em Swift utilizando o paradigma Protocol-Oriented Programming (POP).
 
-# Sistema de Notificações em Swift
+## Detalhes:
+- Equipe de até 5 pessoas
+- Vale: 10% da média final
+- Data de entrega: 30/03/2025
+- Pode ser feito com compilador online (como o https://replit.com/) ou xcode
+
+## Equipe:
+* Giordano Serafini
+* Victor Gabriel
+* Vinicius Yudi
 
 ## Descrição
 Este projeto implementa um sistema de notificações utilizando Swift e o paradigma Protocol-Oriented Programming (POP). O sistema permite enviar diferentes tipos de notificações (Email, SMS e Push Notifications) com diferentes níveis de prioridade.
@@ -63,28 +66,6 @@ Implementa `Notificavel` para envio de notificações push.
 
 #### `filtrarCanais<T: Notificavel>`
 Função genérica que filtra canais de notificação por tipo.
-
-## Exemplo de Uso
-
-```swift
-// Criar uma mensagem
-let mensagem = Mensagem(tipo: .alerta, conteudo: "Teste")
-
-// Criar um canal de notificação
-let email = Email(
-    mensagem: mensagem,
-    prioridade: .alta,
-    enderecoEmail: "exemplo@email.com"
-)
-
-// Enviar notificação
-email.enviarNotificacao()
-```
-
-## Equipe
-- Projeto desenvolvido para a disciplina Swift Essencial
-- Data de entrega: 30/03/2025
-- Valor: 10% da média final
 
 ## Execução
 Para executar o projeto, utilize o comando:
