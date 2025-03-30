@@ -1,8 +1,7 @@
 
 import Foundation
 
-// MARK: - Enums e Structs Básicos
-
+//Enums e Structs Básicos
 /// Enum que define os diferentes tipos de mensagens que podem ser enviadas
 enum TipoMensagem {
     case promocao    // Mensagens promocionais
@@ -16,8 +15,7 @@ struct Mensagem {
     let conteudo: String        // Conteúdo textual da mensagem
 }
 
-// MARK: - Protocolos
-
+//Protocolos
 /// Protocolo base que define o comportamento para todos os tipos de notificação
 protocol Notificavel {
     var mensagem: Mensagem { get set }                // Mensagem a ser enviada
@@ -33,8 +31,7 @@ enum PrioridadeNotificacao {
     case alta       // Prioridade alta
 }
 
-// MARK: - Extensões
-
+//Extensões
 /// Implementação padrão para o protocolo Notificavel
 extension Notificavel {
     /// Implementação padrão do método de envio
@@ -54,8 +51,6 @@ extension Notificavel {
         }
     }
 }
-
-// MARK: - Implementações de Canais de Notificação
 
 /// Implementação de notificação por email
 struct Email: Notificavel {
@@ -93,14 +88,10 @@ struct PushNotification: Notificavel {
     }
 }
 
-// MARK: - Funções Auxiliares
-
 /// Função genérica para filtrar canais de notificação por tipo
 func filtrarCanais<T: Notificavel>(_ canais: [Notificavel], tipo: T.Type) -> [T] {
     return canais.compactMap { $0 as? T }
 }
-
-// MARK: - Função Principal
 
 /// Função principal que demonstra o uso do sistema
 func main() {
